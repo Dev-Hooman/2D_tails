@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
-
     private Animator anim;
     private Rigidbody2D rb;
+    [SerializeField] AudioSource playerDeath;
     //from animation
 
     private void Start()
@@ -22,6 +22,7 @@ public class PlayerLife : MonoBehaviour
         bool you = true;
         if (you == simp)
         {
+            playerDeath.Play();
             Die();
         }
     }
